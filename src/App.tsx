@@ -1,13 +1,17 @@
-import { Heading } from './components/Heading'
-
 import './styles/theme.css'
 import './styles/global.css'
 
+import { TaskContextProvider } from './contexts/TaskContext/TaskContextProvider';
+import { MessagesContainer } from './components/MessagesContainer';
+import { MainRouter } from './routers/MainRouter';
+
+
 export function App() {
-    return (
-        <>
-            <Heading />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas eligendi veniam nesciunt delectus fuga dolore, doloribus, obcaecati assumenda magnam labore doloremque maiores atque necessitatibus nisi similique quos! Laborum, consectetur maiores.</p>
-        </>
-    )
+    return ( 
+        <TaskContextProvider>
+            <MessagesContainer>
+                <MainRouter/>
+            </MessagesContainer>
+        </TaskContextProvider>
+    );
 }
